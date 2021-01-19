@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
+        Container.shared.register(type: RestaurantLister.self, { RestaurantLister() })
         self.window = UIWindow(frame: UIScreen.main.bounds)
         let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateInitialViewController()
         self.window?.rootViewController = viewController
